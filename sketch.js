@@ -25,8 +25,8 @@ function setup() {
   dog.addImage(dogimg1)
   dog.scale=0.2
  
-  var dogo = database.ref('Food');
-  dogo.on("value", readPosition, showError);
+  var doggy = database.ref('Food');
+  doggy.on("value", readPosition, showError);
   feed = createButton("FEED QUACKKY")
   feed.position(500,15)
   feed.mousePressed(FeedDog)
@@ -57,15 +57,15 @@ function showError(){
   console.log("Error in writing to the database");
 }
 
-function writePosition(nazo){
-  if(nazo>0){
-    nazo=nazo-1
+function writePosition(x){
+  if(x>0){
+    x=x-1
   }
   else{
-    nazo=0
+    x=0
   }
   database.ref('/').set({
-    'Food': nazo
+    'Food': x
   })
 
 }
